@@ -74,6 +74,9 @@ if (app.Environment.IsProduction() && app.Configuration["UseHttpsRedirection"] =
     app.UseHttpsRedirection();
 }
 
+// Serve static files (e.g. uploaded profile images) from wwwroot
+app.UseStaticFiles();
+
 app.UseCors("AllowAll");
 
 // Add Serilog request logging
